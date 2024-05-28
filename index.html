@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filipino Cultural Heritage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .slide-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      color: white;
+      cursor: pointer;
+      font-size: 24px; 
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide-content.fade-in {
+      opacity: 1;
+    }
+
+    .slide.fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      transform: none;
+      opacity: 1;
+    }
+
+    .slide.fullscreen .slide-content {
+      display: none;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-buttons button {
+      background-color: #8d3b3b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #aa4c4c;
+    }
+    
+    ul {
+      list-style-type: none; 
+      padding: 0; 
+      text-align: justify;
+    }
+    
+    li {
+      margin-bottom: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="slides">
+      <div class="slide active" id="slide1" style="background-image: url('1.jpg');">
+        <div class="slide-content fade-in">
+          <h2>Filipino Cultural Heritage</h2>
+        </div>
+      </div>
+      <div class="slide" id="slide2" style="background-image: url('3.jpg');">
+        <div class="slide-content">
+          <h2>The Philippines is a diverse and vibrant country with a rich cultural heritage that blends indigenous, Spanish, and Asian influences.</h2>
+          <p>From the colorful traditions and festivals to the captivating arts and cuisine, Filipino culture is a tapestry of unique and fascinating elements.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide3" style="background-image: url('4.jpg');">
+        <div class="slide-content">
+          <h2>History and Traditions</h2>
+        </div>
+      </div>
+      <div class="slide" id="slide4" style="background-image: url('preco.jpg');">
+        <div class="slide-content">
+          <h2>Pre-Colonial Era</h2>
+          <p>Filipinos have a long and storied history, with indigenous cultures and traditions dating back thousands of years.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide5" style="background-image: url('colo.jpg');">
+        <div class="slide-content">
+          <h2>Colonial Era</h2>
+          <p>The colonial era significantly shaped Filipino cultural heritage by blending Spanish influences on religion, language, cuisine, and architecture with American contributions to education, governance, and popular culture, creating a unique and diverse cultural identity.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide6" style="background-image: url('mod.jpg');">
+        <div class="slide-content">
+          <h2>Modern Philippines</h2>
+          <p>Today, the Philippines celebrates its diverse heritage, blending ancient traditions with modern adaptations and global influences.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide7" style="background-image: url('lan.jpg');">
+        <div class="slide-content">
+          <h2>Language and Literature</h2>
+        </div>
+      </div>
+      <div class="slide" id="slide8" style="background-image: url('div.jpg');">
+        <div class="slide-content">
+          <h2>Diverse Languages</h2>
+          <p>The colonial era significantly shaped Filipino cultural heritage by blending Spanish influences on religion, language, cuisine, and architecture with American contributions to education, governance, and popular culture, creating a unique and diverse cultural identity.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide9" style="background-image: url('rich.jpg');">
+        <div class="slide-content">
+          <h2>Rich Oral Tradition</h2>
+          <p>Filipino literature has a strong oral tradition, with epic tales, folktales, and traditional poetry passed down through generations.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide10" style="background-image: url('mode.jpg');">
+        <div class="slide-content">
+          <h2>Modern Writers</h2>
+          <p>Contemporary Filipino authors have gained global recognition, exploring themes of identity, history, and the Filipino experience.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide11" style="background-image: url('fes.jpg');">
+        <div class="slide-content">
+          <h2>Festival and Celebrations</h2>
+        </div>
+      </div>
+      <div class="slide" id="slide12" style="background-image: url('sin.jpg');">
+        <div class="slide-content">
+          <h2>Sinulog Festival</h2>
+          <p>Filipino literature has a strong oral tradition, with epic tales, folktales, and traditional poetry passed down through generations.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide13" style="background-image: url('dinagy.jpg');">
+        <div class="slide-content">
+          <h2>Dinagyang Festival</h2>
+          <p>Filipino literature has a strong oral tradition, with epic tales, folktales, and traditional poetry passed down through generations.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide14" style="background-image: url('pan.jpg');">
+        <div class="slide-content">
+          <h2>Panagbenga Festival</h2>
+          <p>Filipino literature has a strong oral tradition, with epic tales, folktales, and traditional poetry passed down through generations.</p>
+        </div>
+      </div>
+      <div class="slide" id="slide14" style="background-image: url('pus.jpg');">
+        <div class="slide-content">
+          <h2>That's all, Thank you!</h2>
+        </div>
+      </div>
+      <div class="slide" id="slide14" style="background-image: url('ca.jpg');">
+        <div class="slide-content">
+          <h2>Group 1</h2>
+          <ul>
+            <li>Image Provider: Margie Duran</li>
+            <li>Image Provider: Lyka Mae Rosal</li>
+            <li>Coder: John Lenard Barrion</li>
+            <li>Coder: Kenneth Nazareta</li>
+            <li>Information Provider: Krim Primavera</li>
+            <li>Information Provider: Robert Romero</li>
+            <li>Reporter: Lorinz Tabura</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button id="prevBtn">Previous</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const previousSlide = document.querySelector('.slide.active');
+        const newSlide = slides[index];
+
+        if (previousSlide) {
+          const previousContent = previousSlide.querySelector('.slide-content');
+          previousContent.classList.remove('fade-in');
+          setTimeout(() => {
+            previousSlide.classList.remove('active');
+            previousSlide.style.opacity = 0;
+          }, 500);
+        }
+
+        const newContent = newSlide.querySelector('.slide-content');
+        newSlide.classList.add('active');
+        newSlide.style.opacity = 1;
+        setTimeout(() => {
+          newContent.classList.add('fade-in');
+        }, 50);
+      }
+
+      function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+      }
+
+      function toggleFullscreen(slide) {
+        if (slide.classList.contains('fullscreen')) {
+          slide.classList.remove('fullscreen');
+        } else {
+          slide.classList.add('fullscreen');
+        }
+      }
+
+      function toggleText(slideContent) {
+        slideContent.classList.toggle('hidden');
+      }
+
+      showSlide(currentSlide);
+
+      document.getElementById("nextBtn").addEventListener("click", nextSlide);
+      document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+      slides.forEach(slide => {
+        const slideContent = slide.querySelector('.slide-content');
+        slideContent.addEventListener('click', (e) => {
+          toggleFullscreen(slide);
+          toggleText(slideContent);
+        });
+      });
+
+      document.body.addEventListener('click', (e) => {
+        if (!e.target.closest('.slide-content')) {
+          slides.forEach(slide => {
+            slide.classList.remove('fullscreen');
+            const slideContent = slide.querySelector('.slide-content');
+            slideContent.classList.remove('hidden');
+          });
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
